@@ -6,6 +6,6 @@ package com.dreampany.daggerjavaclean.data;
 
 public class ApiService {
     public String getData() {
-        return "Data";
+        return "ApiService Data";
     }
 }

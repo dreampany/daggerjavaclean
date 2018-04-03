@@ -3,6 +3,8 @@ package com.dreampany.daggerjavaclean.app;
 import android.app.Activity;
 import android.app.Application;
 
+import com.dreampany.daggerjavaclean.di.DaggerAppComponent;
+
 import javax.inject.Inject;
 
 import dagger.android.DispatchingAndroidInjector;
@@ -20,6 +22,7 @@ public class App extends Application implements HasActivityInjector {
     @Override
     public void onCreate() {
         super.onCreate();
+        DaggerAppComponent.builder().app(this).build().inject(this);
     }
 
     @Override

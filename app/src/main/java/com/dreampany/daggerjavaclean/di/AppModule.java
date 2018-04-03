@@ -5,6 +5,8 @@ import android.content.Context;
 import com.dreampany.daggerjavaclean.app.App;
 import com.dreampany.daggerjavaclean.data.ApiService;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -20,6 +22,7 @@ public class AppModule {
         return app.getApplicationContext();
     }
 
+    @Singleton
     @Provides
     ApiService provideApiService() {
         return new ApiService();
